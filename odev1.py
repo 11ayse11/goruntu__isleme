@@ -12,8 +12,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from google.colab.patches import cv2_imshow
 
-
-
 foto=cv2.imread("cicek.png")
 renkli_foto = cv2_imshow(foto)
 
@@ -21,17 +19,14 @@ B = foto[:,:,0]
 G = foto[:,:,1]
 R = foto[:,:,2]
 
-
 from matplotlib import pyplot as plt
 #grileştirme:
 imgGray = 0.2989 * R + 0.5870 * G + 0.1140 * B
 plt.imshow(imgGray, cmap='gray')
 plt.show()
 
-
-
-
 histogram = np.zeros(256)
+
 for i in range(foto.shape[0]):
     for j in range(foto.shape[1]):
         pixel_deg= foto[i, j]
