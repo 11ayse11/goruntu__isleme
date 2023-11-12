@@ -11,8 +11,9 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from google.colab.patches import cv2_imshow
-
+#görüntü okuma
 foto=cv2.imread("cicek.png")
+
 renkli_foto = cv2_imshow(foto)
 
 B = foto[:,:,0]
@@ -24,7 +25,7 @@ from matplotlib import pyplot as plt
 imgGray = 0.2989 * R + 0.5870 * G + 0.1140 * B
 plt.imshow(imgGray, cmap='gray')
 plt.show()
-
+#histogram hesabı
 histogram = np.zeros(256)
 
 for i in range(foto.shape[0]):
@@ -33,6 +34,5 @@ for i in range(foto.shape[0]):
         histogram[pixel_deg] += 1
 
 plt.bar(range(256), histogram)
-plt.xlabel("Parlaklık ")
-plt.ylabel("Piksel Sayısı")
+
 plt.show()
